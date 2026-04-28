@@ -1,6 +1,6 @@
 <div align="center">
 
-# 青翼的 Blog
+# Blog
 
 高性能计算、系统实践与 AI 学习笔记
 
