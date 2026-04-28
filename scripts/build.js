@@ -72,6 +72,7 @@ function pageLayout({ title, description, body, canonical = "" }) {
       <div class="nav-links">
         <a href="index.html#articles">文章</a>
         <a href="index.html#topics">主题</a>
+        <a href="index.html#about">关于</a>
         ${site.links.map((link) => `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.label)}</a>`).join("")}
       </div>
     </nav>
@@ -108,23 +109,24 @@ function tagList() {
 
 function renderIndex() {
   const categories = categoryCounts();
+  const featured = articles[0];
   const body = `    <section class="hero">
       <div class="hero-intro">
-        <p class="eyebrow">静态技术博客</p>
+        <p class="eyebrow">HPC · Systems · AI Notes</p>
         <h1>${escapeHtml(site.subtitle)}</h1>
-        <p class="hero-text">${escapeHtml(site.description)}</p>
+        <p class="hero-text">把并行计算、GPU 编程、系统基础和机器学习里的关键路径沉淀成可以反复回看的技术笔记。</p>
         <div class="hero-actions">
           <a class="button primary" href="#articles">阅读文章</a>
-          <a class="button" href="${escapeHtml(site.siteUrl)}">访问站点</a>
+          <a class="button" href="${escapeHtml(featured.output)}">最新笔记</a>
         </div>
       </div>
-      <aside class="profile-card" aria-label="作者信息">
-        <div class="profile-top">
-          <img class="avatar" src="${site.avatar}" alt="${escapeHtml(site.author)}">
-          <div>
-            <h2>${escapeHtml(site.author)}</h2>
-            <p>HPC · 并行计算 · AI</p>
-          </div>
+      <aside class="profile-card" id="about" aria-label="作者信息">
+        <img class="avatar" src="${site.avatar}" alt="${escapeHtml(site.author)}">
+        <p class="profile-label">作者</p>
+        <h2>${escapeHtml(site.author)}</h2>
+        <p>研究和实践围绕高性能计算、并行程序设计、GPU 计算与 AI 基础展开。</p>
+        <div class="profile-links">
+          ${site.links.map((link) => `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.label)}</a>`).join("")}
         </div>
         <div class="stat-grid">
           <div class="stat"><strong>${articles.length}</strong><span>文章</span></div>
@@ -139,8 +141,13 @@ function renderIndex() {
           <p>按研究和工程方向快速定位笔记。</p>
         </div>
       </div>
-      <div class="tag-cloud">
-        ${categories.map(([name, count]) => `<span class="tag">${escapeHtml(name)} · ${count}</span>`).join("")}
+      <div class="topic-grid">
+        ${categories.map(([name, count]) => `<a class="topic-card" href="#articles">
+          <span>${escapeHtml(name)}</span>
+          <strong>${count}</strong>
+        </a>`).join("")}
+      </div>
+      <div class="tag-cloud compact">
         ${tagList().map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
       </div>
     </section>
@@ -156,8 +163,10 @@ function renderIndex() {
           <div class="article-meta"><span>${escapeHtml(article.category)}</span><time datetime="${escapeHtml(article.date)}">${escapeHtml(article.date)}</time></div>
           <h3><a href="${escapeHtml(article.output)}">${escapeHtml(article.title)}</a></h3>
           <p>${escapeHtml(article.summary)}</p>
-          <div class="tag-cloud">${article.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
-          <a class="read-more" href="${escapeHtml(article.output)}">阅读全文</a>
+          <div class="article-foot">
+            <div class="tag-cloud">${article.tags.slice(0, 3).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
+            <a class="read-more" href="${escapeHtml(article.output)}">阅读全文</a>
+          </div>
         </article>`).join("")}
       </div>
     </section>`;
@@ -307,6 +316,7 @@ async function copyBaseAssets() {
   await fs.copyFile(path.join(srcDir, "styles/site.css"), path.join(distDir, "assets/site.css"));
   await convertImage("image/head.jpg");
   await convertImage("image/log.png");
+  await convertImage("image/background.jpg");
 }
 
 async function writeFile(relativePath, content) {
