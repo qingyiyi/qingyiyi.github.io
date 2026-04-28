@@ -1,0 +1,19 @@
+{
+  "title": "青翼的 Blog",
+  "subtitle": "高性能计算、系统实践与 AI 学习笔记",
+  "description": "一个面向 HPC、并行计算、机器学习和工程实践的静态技术博客。",
+  "author": "青翼",
+  "siteUrl": "https://qingyiyi.github.io/",
+  "avatar": "image/head.webp",
+  "logo": "image/log.webp",
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/qingyiyi"
+    },
+    {
+      "label": "CSDN",
+      "url": "https://blog.csdn.net/m0_61035708?type=blog"
+    }
+  ]
+}

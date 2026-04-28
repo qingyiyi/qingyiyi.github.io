@@ -1,0 +1,92 @@
+[
+  {
+    "id": "blog_9",
+    "title": "机器学习 quick access",
+    "date": "2024-11-08",
+    "summary": "机器学习基础概念、线性回归、梯度下降和神经网络入门笔记。",
+    "category": "机器学习",
+    "tags": ["机器学习", "AI", "深度学习"],
+    "source": "src/legacy/blog_9.html",
+    "output": "blog_9.html"
+  },
+  {
+    "id": "blog_8",
+    "title": "大二小学期：搭建一个网购平台",
+    "date": "2024-11-08",
+    "summary": "记录 Java Web 网购平台开发过程中的环境配置、MyBatis、Servlet 和页面实现。",
+    "category": "工程实践",
+    "tags": ["Java Web", "MyBatis", "项目实践"],
+    "source": "src/legacy/blog_8.html",
+    "output": "blog_8.html"
+  },
+  {
+    "id": "blog_7",
+    "title": "OpenMP 教程",
+    "date": "2024-11-08",
+    "summary": "OpenMP 并行编程模型、fork-join 执行方式和常用并行结构笔记。",
+    "category": "并行计算",
+    "tags": ["OpenMP", "HPC", "并行编程"],
+    "source": "src/legacy/blog_7.html",
+    "output": "blog_7.html"
+  },
+  {
+    "id": "blog_6",
+    "title": "简单 CPU 设计",
+    "date": "2022-12-13",
+    "summary": "基于 Verilog 的简单 CPU 课程设计总结，包含资料整理和实现记录。",
+    "category": "体系结构",
+    "tags": ["Verilog", "CPU", "体系结构"],
+    "source": "src/legacy/blog_6.html",
+    "output": "blog_6.html"
+  },
+  {
+    "id": "blog_5",
+    "title": "MPI 并行程序设计",
+    "date": "2022-10-16",
+    "summary": "MPI 编程学习笔记，覆盖消息传递、阻塞/非阻塞通信、组通信和并行算法。",
+    "category": "并行计算",
+    "tags": ["MPI", "HPC", "并行编程"],
+    "source": "src/legacy/blog_5.html",
+    "output": "blog_5.html"
+  },
+  {
+    "id": "blog_4",
+    "title": "CUDA 小小入门",
+    "date": "2022-09-26",
+    "summary": "CUDA GPU 并行编程入门，包含线程组织、内存模型、规约和优化原则。",
+    "category": "GPU 计算",
+    "tags": ["CUDA", "GPU", "HPC"],
+    "source": "src/legacy/blog_4.html",
+    "output": "blog_4.html"
+  },
+  {
+    "id": "blog_3",
+    "title": "汇编从入门到拆炸弹",
+    "date": "2022-09-17",
+    "summary": "汇编语言、栈、函数调用和 CS:APP Bomb Lab 相关学习笔记。",
+    "category": "系统基础",
+    "tags": ["汇编", "CSAPP", "系统"],
+    "source": "src/legacy/blog_3.html",
+    "output": "blog_3.html"
+  },
+  {
+    "id": "blog_2",
+    "title": "纯小白如何在 Win11 环境下运行 MPI 程序",
+    "date": "2022-07-13",
+    "summary": "Win11 环境下配置 MPI 开发工具链的踩坑记录，面向第一次运行 MPI 的新手。",
+    "category": "并行计算",
+    "tags": ["MPI", "Windows", "环境配置"],
+    "source": "src/legacy/blog_2.html",
+    "output": "blog_2.html"
+  },
+  {
+    "id": "blog_1",
+    "title": "如何制作 LAPACK 库的 DLL 链接文件",
+    "date": "2022-05-14",
+    "summary": "在 Windows 环境下用 CMake 和 MinGW 编译 LAPACK 动态链接库的过程记录。",
+    "category": "工程实践",
+    "tags": ["LAPACK", "CMake", "Windows"],
+    "source": "src/legacy/blog_1.html",
+    "output": "blog_1.html"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "name": "qingyiyi.github.io",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "npm run build && npx serve dist",
+    "check": "node scripts/check.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "sharp": "^0.34.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
